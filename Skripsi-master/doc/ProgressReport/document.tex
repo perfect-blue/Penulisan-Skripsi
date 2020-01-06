@@ -1,0 +1,162 @@
+\documentclass[a4paper,twoside]{article}
+\usepackage[T1]{fontenc}
+\usepackage[bahasa]{babel}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{float}
+\usepackage[cm]{fullpage}
+\pagestyle{myheadings}
+\usepackage{etoolbox}
+\usepackage{setspace} 
+\usepackage{lipsum} 
+\setlength{\headsep}{30pt}
+\usepackage[inner=2cm,outer=2.5cm,top=2.5cm,bottom=2cm]{geometry} %margin
+% \pagestyle{empty}
+
+\makeatletter
+\renewcommand{\@maketitle} {\begin{center} {\LARGE \textbf{ \textsc{\@title}} \par} \bigskip {\large \textbf{\textsc{\@author}} }\end{center} }
+\renewcommand{\thispagestyle}[1]{}
+\markright{\textbf{\textsc{Laporan Perkembangan Pengerjaan Skripsi\textemdash Sem. Ganjil 2019/2020}}}
+
+\onehalfspacing
+ 
+\begin{document}
+
+\title{\@judultopik}
+\author{\nama \textendash \@npm} 
+
+%ISILAH DATA BERIKUT INI:
+\newcommand{\nama}{Muhammad Ravi}
+\newcommand{\@npm}{2016730041}
+\newcommand{\tanggal}{20/11/2019} %Tanggal pembuatan dokumen
+\newcommand{\@judultopik}{Studi dan implementasi \textit{Spark Streaming} untuk Mengumpulkan \textit{Big Data Stream}} % Judul/topik anda
+\newcommand{\kodetopik}{VSM4702}
+\newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
+\newcommand{\pembA}{Veronica Sri Moertini}
+\newcommand{\pembB}{-}
+\newcommand{\semesterPertama}{40 - Ganjil 19/20} % semester pertama kali topik diambil, angka 1 dimulai dari sem Ganjil 96/97
+\newcommand{\lamaSkripsi}{1} % Jumlah semester untuk mengerjakan skripsi s.d. dokumen ini dibuat
+\newcommand{\kulPertama}{Skripsi 1} % Kuliah dimana topik ini diambil pertama kali
+\newcommand{\tipePR}{B} % tipe progress report :
+% A : dokumen pendukung untuk pengambilan ke-2 di Skripsi 1
+% B : dokumen untuk reviewer pada presentasi dan review Skripsi 1
+% C : dokumen pendukung untuk pengambilan ke-2 di Skripsi 2
+
+% Dokumen hasil template ini harus dicetak bolak-balik !!!!
+
+\maketitle
+
+\pagenumbering{arabic}
+
+\section{Data Skripsi} %TIDAK PERLU MENGUBAH BAGIAN INI !!!
+Pembimbing utama/tunggal: {\bf \pembA}\\
+Pembimbing pendamping: {\bf \pembB}\\
+Kode Topik : {\bf \kodetopik}\\
+Topik ini sudah dikerjakan selama : {\bf \lamaSkripsi} semester\\
+Pengambilan pertama kali topik ini pada : Semester {\bf \semesterPertama} \\
+Pengambilan pertama kali topik ini di kuliah : {\bf \kulPertama} \\
+Tipe Laporan : {\bf \tipePR} -
+\ifdefstring{\tipePR}{A}{
+			Dokumen pendukung untuk {\BF pengambilan ke-2 di Skripsi 1} }
+		{
+		\ifdefstring{\tipePR}{B} {
+				Dokumen untuk reviewer pada presentasi dan {\bf review Skripsi 1}}
+			{	Dokumen pendukung untuk {\bf pengambilan ke-2 di Skripsi 2}}
+		}
+		
+\section{Latar Belakang}
+ Dalam beberapa tahun terakhir,Perkembangan data melonjak secara cepat. Hal ini disebabkan karena
+semakin banyak orang yang mengakses ranah digital. Website yang diakses, media sosial yang dijelajahi, atau
+sensor-sensor dari barang-barang elektronik yang terhubung ke internet semua meninggalkan jejak digital
+berupa data. Data yang terakumulasi ini berukuran besar dengan format yang bervariasi dan berkembang
+dengan sangat cepat.
+Jika data yang terakumulasi tersebut diolah dan dianalisis, banyak informasi-informasi bermanfaat yang bisa
+didapat. Contohnya, data bisa menjadi bahan pertimbangan untuk pengambilan keputusan bisnis. Tetapi
+masalahnya bukan hanya itu saja, Tidak semua data memiliki nilai yang sama. Ada data yang memiliki
+nilai lebih ketika bisa langsung dianalisis ketika didapatkan.
+Spark Streaming merupakan teknologi sebagai solusi terhadap adanya kebutuhan untuk menganalisis big data
+secara real time. Big data yang perlu dianalisis secara real-time misalnya: page views (data klik). Data hasil
+streaming kemudian dapat dianalisis dengan teknik-teknik analisis data berbasis statistik maupun machine
+learning/data mining.
+
+\section{Rumusan Masalah}
+ \begin{itemize}
+ 	\item Bagaimana Karakteristik \textit{datastream} dan contoh-contoh analisisnya?
+ 	\item Bagaimana cara kerja \textit{Spark Streaming} untuk mengumpulkan \textit{datastream}?
+ 	\item Bagaimana cara mengintegrasikan \textit{Spark Streaming} dengan sistem pengumpul data 		  lain?
+ 	\item Bagaiaman cara menganalisis data yang telah terkumpul?
+ \end{itemize}
+ 
+\section{Tujuan}
+\begin{itemize}
+	\item Melakukan studi tentang definis, pola-pola, arsitekstur, dan manfaat analisis dari 			  data stream
+	\item Mempelajari konsep, arsitektur, cara kerja Spark Streaming dan integrasinya dengan 			  sistem lain seperti; \textit{Kafka, Flume, atau Kinesis}.
+	\item Mengimplementasikan Spark Streaming pada sebuah sistem untuk mengumpulkan data stream
+		  dengan kasus-kasus tertentu.
+	\item Menganalisis data yang sudah terkumpul
+	
+\end{itemize}
+
+
+
+\section{Detail Perkembangan Pengerjaan Skripsi}
+Detail bagian pekerjaan skripsi sesuai dengan rencan kerja/laporan perkembangan terkahir :
+	\begin{enumerate}
+		\item{Pada Bab I: Pendahuluan, saya mempelajari dan menulis latar belakang dari skripsi 		ini, mengapa topik ini diangkat dan gambaran besar tentang topik ini, merumuskan 				masalah apa yang ingin dijawab dan menentukan tujuan, proses, yang ingin dicapai. Serta 		memberi batasan masalah terhadap topik ini.}
+		\item{Bab 2: landasan Teori mempelajari dan menulis hal-hal apa saja yang akan menjadi 			dasar untuk pengerjaan skripsi di Bab 4 nanti.}
+		\item {Selama bab 2 saya mempelajari Karakteristik dan masalah-masalah yang muncul dari 		\textit{Big Data}. Lalu, saya belajar tentang bentuk Big data yang lain yaitu; Big data 		Stream atau data yang datang secara real-time dan terus menerus. Karena itu perlu ada 			penanganan khusus berupa penerapan arsitektur.}
+		\item {Arsitektur yang diterapkan pada data stream tidak mengenal satuan waktu, artinya 		data yang pertama masuk ke sistem hanya akan diberi timestamp terlepas waktu tersebut 			sama dengan waktu awal data dibuat. Penerapan timestamp bertujuan untuk memudahkan 				agregasi pada sistem. Sistem yang digunakan harus bisa menganalisis data secara real 			time}
+		\item {Untuk mencapai hal tersebut, ada 2 arsitektur yang bisa digunakan untuk 					menangani data stream yaitu arsitektur kappa dan arsitektur lambda. Arsitektur kappa 			sepenuhnya menggunakan real-time processing. Sedangkan arsitektur lambda menggunakan 			real-time dan batch-processing untuk meningkatkan akurasi.}
+		\item {Agar bisa menerapkan kedua arsitektur tersebut saya mempelajari hadoop dan map 			reduce dan Spark yang memungkinkan untuk memproses data dengan cepat dan fault 					tolerant}
+		\item {Terakhir di Bab 2 saya mempelajari Spark Streaming, yaitu sebuah API Spark yang 			bisa memproses data yang besar secara real-time. Spark Streaming bisa berintegrasi 				dengan sistem pengumpul data lain atau sumber data.}
+		\item {Pada Bab 3: Eksplorasi, saya mulai menyetel environment untuk spark streaming; 			seperti menginstak hadoop, spark, zookeeper, dan kafka, serta mencoba mengintegrasikan 			data dengan twitter, kafka, dan Amazon kinesis. Serta mengolah data dengan operasi-				operasi sederhana seperti menyimpan tweet ke HDFS dan menghitung banyaknya log.}
+		\item {Pada bab 4: Analisis, saya mencoba menerapkan teori bab 2 dan melakukan analisis 		pada kasus-kasus seperti menghitung hashtag dan menghitung jumlah error pada weblogs}
+		\item {terakhir saya sedang menulis sebagian Bab 2 dan 3.} 
+	\end{enumerate}
+
+\section{Pencapaian Rencana Kerja}
+Langkah-langkah kerja yang berhasil diselesaikan dalam Skripsi 1 ini adalah sebagai berikut:
+\begin{enumerate}
+\item Mempelajari teknik-teknik analisis dan manfaat analisis dari \textit{datastreams}
+\item Mempelajari konsep-konsep, arsitektur, dan cara kerja \textit{Spark Streaming}
+\item Mengintegrasikan \textit{Spark Streaming} dengan sistem lain yaitu; \textit{Twitter, 			  Kafka, dan TCP Socket} untuk mengambil \textit{datastream}
+\item menulis sebagian dokumen skripsi Bab 1, Bab 2, Bab 3 
+\end{enumerate}
+
+
+
+\section{Kendala yang Dihadapi}
+%TULISKAN BAGIAN INI JIKA DOKUMEN ANDA TIPE A ATAU C
+Kendala - kendala yang dihadapi selama mengerjakan skripsi :
+\begin{itemize}
+	\item Kesulitan meng-instal environment di PC.
+	\item Banyak tugas dari mata kuliah lain
+	\item Sering ada versi yang tidak saling cocok.
+	\item terlalu banyak environment yang di-instal
+	
+\end{itemize}
+
+\vspace{1cm}
+\centering Bandung, \tanggal\\
+\vspace{2cm} \nama \\ 
+\vspace{1cm}
+
+Menyetujui, \\
+\ifdefstring{\jumpemb}{2}{
+\vspace{1.5cm}
+\begin{centering} Menyetujui,\\ \end{centering} \vspace{0.75cm}
+\begin{minipage}[b]{0.45\linewidth}
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013 \\
+\vspace{2cm} Nama: \pembA \\ Pembimbing Utama
+\end{minipage} \hspace{0.5cm}
+\begin{minipage}[b]{0.45\linewidth}
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
+\vspace{2cm} Nama: \pembB \\ Pembimbing Pendamping
+\end{minipage}
+\vspace{0.5cm}
+}{
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
+\vspace{2cm} Nama: \pembA \\ Pembimbing Tunggal
+}
+\end{document}
+

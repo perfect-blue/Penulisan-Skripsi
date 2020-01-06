@@ -1,0 +1,93 @@
+%versi 2 (8-10-2016) 
+\chapter{Pendahuluan}
+\label{chap:intro}
+   
+\section{Latar Belakang}
+\label{sec:label}
+
+Dalam beberapa tahun terakhir,Perkembangan data melonjak secara cepat. Hal ini disebabkan karena semakin banyak orang yang terhubung secara digital. Website yang diakses, media sosial yang dijelajahi, atau sensor-sensor dari barang-barang elektronik yang terhubung ke internet semua meninggalkan jejak digital berupa data. Data yang terakumulasi ini berukuran besar dengan format yang bervariasi dan berkembang dengan sangat cepat.
+
+Jika data yang terakumulasi tersebut diolah dan dianalisis, banyak informasi-informasi bermanfaat yang bisa didapat. Contohnya, data bisa menjadi bahan pertimbangan untuk pengambilan keputusan bisnis. Tetap, Tidak semua data memiliki nilai dan sifat yang sama. Ada data yang memiliki nilai lebih ketika bisa langsung dianalisis ketika didapatkan. Kebutuhan untuk langsung mendapatkan dan menganalisis data secara \textit{real-time}menjadi sangat penting. Selain itu, teknik pengumpulan data yang digunakan untuk pola data yang datang secara terus menerus berbeda dengan teknik yang digunakan untuk mengumpulkan dan mengolah data biasa. \textit{Big Data} yang perlu diakses secara \textit{real-time} adalah page views pada sebuah website, sensor pada IoT (\textit{Internet of Things}.
+
+Selain itu kebutuhan untuk mengolah data dengan cepat semakin penting karena nilai suatu data cenderung menurun secara eksponensial seiiring bertambahnnya waktu. Banyak Perusahaan dan Organisasi yang membutuhkan data untuk diolah secara cepat. Semakin cepat data bisa diambil, dianalisis, dimanipulasi, dan semakin banyak througput yang bisa dihasilkan maka sebuah organisasi akan lebih \textit{agile} dan responsif. Semakin sedikit waktu yang digunakan untuk ETL (\textit{Extract, Load, Transform}) pekerjaan akan semakin fokus untuk melakukan analisis bisnis.
+
+Untuk menjawab masalah di atas, \textit{Spark Streaming} merupakan teknologi yang menjadi salah satu solusi terhadap adanya kebutuhan untuk menganalisis \textit{big data} secara \textit{real time}. Data hasil streaming kemudian dapat dianalisis dengan teknik-teknik analisis data berbasis statistik maupun \textit{machine learning/data mining} dan divisualisasikan agar lebih mudah dimengerti.
+
+
+\section{Rumusan Masalah}
+\label{sec:rumusan}
+Berdasarkan latar belakang yang sudah dijabarkan, berikut adalah rumusan masalah untuk skripsi ini.
+\begin{enumerate}
+\item Bagaimana Karakteristik \textit{data stream} dan contoh-contoh analisisnya?
+\item Bagaimana cara kerja \textit{Spark Streaming}?
+\item Bagaimana cara mengintegrasikan \textit{Spark Streaming} untuk mengumpulkan data?
+\item Bagaimana cara menganalisis data yang telah terkumpul?
+\end{enumerate}
+
+\section{Tujuan}
+\label{sec:tujuan}
+Berikut ini adalah tujuan yang ingin dicapai pada skripsi ini.
+\begin{enumerate}
+\item Melakukan studi tentang definis, pola-pola, arsitekstur, dan manfaat analisis dari data stream
+\item Mempelajari konsep, arsitektur, cara kerja Spark Streaming dan integrasinya dengan teknologi-teknologi
+lain
+\item Mengimplementasikan \textit{Spark Streaming} pada sebuah sistem untuk mengumpulkan data stream dengan kasus-kasus tertentu.
+\item Menganalisis dan mempresentasikan data 
+\end{enumerate}
+
+\section{Batasan Masalah}
+Batasan masalah untuk skripsi ini adalah sebagai berikut.
+\begin{enumerate}
+	\item Data uji yang digunakan akan berupa data yang didapatkan dari Twitter  API dan API
+	lain yang didapatkan dari kafka.
+	\item Pengembangan perangkat lunak untuk pemrosesan data dilakukan dengan menggunakan 			library \textit{Spark} dan menggunakan bahasa pemrograman \textit{Scala}.
+	\item Data yang diolah bisa berubah dan memiliki batasan akses sesuai penyedia data tersebut
+\end{enumerate}
+\label{sec:batasan}
+
+\section{Metodologi}
+Metodologi yang digunakan dalam pembuatan skripsi ini adalah sebagai berikut.
+\begin{enumerate}
+	\item Mempelajari pola, arsitektur, dan sumber dar \textit{Big Data Stream}.
+	\item Mempelajari arsitektur, cara kerja, dan komponen-komponen \textit{Spark}.
+	\item Mempelajari Distribusi data pada \textit{Hadoop distributed file System}.
+	\item Mempelajari arsitektur dan cara kerja \textit{Spark Streaming} pada \textit{Spark}.
+	\item Mempelajari Bahasa pemrograman \textit{Scala}.
+	\item Mempelajari \textit{Kafka} dan \textit{Twitter Analysis}.
+	\item Mengintegrasikan \textit{Spark Streaming} dengan kafka dan Twitter. 
+	\item Mengimplementasikan \textit{Spark Streaming} pada klaster.
+	\item Menganalisis dan menampilkan data dari \textit{Spark Streaming}. 
+\end{enumerate}
+\label{sec:metlit}
+
+
+\section{Sistematika Pembahasan}
+Sistematika penulisan skripsi ini adalah sebagai berikut.
+\begin{enumerate}
+	\item{Bab Pendahuluan \newline
+		Bab 1 membahas tentang latar belakang, rumusan masalah, tujuan, Batasan masalah, 				metodologi penilitian, dan sistematika pembahasan.
+	}
+	
+	\item{Bab Landasan Teori \newline
+		Bab 2 membahas tentang teori-teori mengenai \textit{Big Data},\textit{Big Data Stream},
+		Sistem terdistribusi \textit{Spark}, \textit{Spark Streaming}, \textit{Kafka}, 	dan 					\textit{Twitter Analysis}.
+	}
+	
+	\item{Bab Studi Eksplorasi \newline
+		Bab 3 membahas tentang langkah-langkah untuk melakukan konfigurasi klaster pada 				\textit{hadoop}, konfigurasi klaster untuk \textit{Spark}, hasil studi eksplorasi 				\textit{Spark Streaming}.
+	}
+	
+	\item{Bab Analisis dan Perancangan \newline
+		Bab 4 membahas tentang analisis perangkat lunak \textit{Spark}, analisis data uji, 				analisis masukan dan keluaran, analisis antar muka, diagram \textit{use case}, skenario 		\textit{use case}, rancangan proses praolah, rancangan proses analisis, diagram kelas,
+		dan rancangan antarmuka.
+	}
+	
+	\item{Bab Implementasi dan Eksperimen \newline
+		Bab 5 membahas tentang implementasi perangkat lunak, eksperimen performansi, perintah-       		perintah \textit{Spark Streaming} yang diimplementasikan, dan analisis hasil 					eksperimen.
+	}
+	
+	\item{Bab kesimpulan dan Saran \newline
+		Bab 6 membahas tentang kesimpulan yang disampaikan penulis setelah melakukan penelitian 		ini dan saran-saran untuk pengembangan lanjut.
+	}
+\end{enumerate}
+\label{sec:sispem}
